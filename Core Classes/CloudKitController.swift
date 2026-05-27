@@ -3198,8 +3198,8 @@ final class CloudKitController
         attendanceCK["timeIn"] = attendanceRecord.timeIn as NSDate
         attendanceCK["timeOut"] = attendanceRecord.timeOut as NSDate
         attendanceCK["glidingCentre"] = attendanceRecord.glidingCentre?.name
-        attendanceCK["pilot"] = attendanceRecord.pilot?.recordID as NSDate? ?? nil
-        attendanceCK["pilotFullName"] = attendanceRecord.pilot?.fullName as NSString? ?? nil
+        attendanceCK["pilot"] = attendanceRecord.pilot?.recordID
+        attendanceCK["pilotFullName"] = attendanceRecord.pilot?.fullName
         appendRegionTo(record: attendanceCK)
         
         return attendanceCK
@@ -3224,7 +3224,7 @@ final class CloudKitController
         commentCK["recordChangeTime"] = glidingDayComment.recordChangeTime as NSDate
         commentCK["ID"] = glidingDayComment.recordID as NSDate
         commentCK["date"] = glidingDayComment.date as NSDate
-        commentCK["glidingCentre"] = glidingDayComment.glidingCentre?.name as NSString? ?? nil
+        commentCK["glidingCentre"] = glidingDayComment.glidingCentre?.name
         commentCK["comment"] = glidingDayComment.comment as NSString
         appendRegionTo(record: commentCK)
 
@@ -3287,14 +3287,14 @@ final class CloudKitController
         flightCK["transitRoute"] = flightRecord.transitRoute as NSString?
         flightCK["flightSequence"] = flightRecord.flightSequence as NSString
         flightCK["flightLengthInMinutes"] = flightRecord.flightLengthInMinutes as NSNumber
-        flightCK["picRecordID"] = flightRecord.pilot?.recordID as NSDate? ?? nil
-        flightCK["passengerRecordID"] = flightRecord.passenger?.recordID as NSDate? ?? nil
-        flightCK["timesheetRecordID"] = flightRecord.timesheet?.recordID as NSDate? ?? nil
-        flightCK["connectedRecordID"] = flightRecord.connectedAircraftRecord?.recordID as NSDate? ?? nil
-        flightCK["pilot"] = flightRecord.pilot.fullName as NSString? ?? nil
-        flightCK["passenger"] = flightRecord.passenger?.fullName as NSString? ?? nil
-        flightCK["aircraft"] = flightRecord.timesheet.aircraft.tailNumber as NSString? ?? nil
-        flightCK["connectedAircraft"] = flightRecord.connectedAircraftRecord?.timesheet?.aircraft?.tailNumber as NSString? ?? nil
+        flightCK["picRecordID"] = flightRecord.pilot?.recordID
+        flightCK["passengerRecordID"] = flightRecord.passenger?.recordID
+        flightCK["timesheetRecordID"] = flightRecord.timesheet?.recordID
+        flightCK["connectedRecordID"] = flightRecord.connectedAircraftRecord?.recordID
+        flightCK["pilot"] = flightRecord.pilot.fullName
+        flightCK["passenger"] = flightRecord.passenger?.fullName
+        flightCK["aircraft"] = flightRecord.timesheet.aircraft.tailNumber
+        flightCK["connectedAircraft"] = flightRecord.connectedAircraftRecord?.timesheet?.aircraft?.tailNumber
         flightCK["gliderOrTowplane"] = flightRecord.timesheet.aircraft.gliderOrTowplane as NSNumber
         flightCK["glidingCenter"] = flightRecord.timesheet.glidingCentre.name as NSString
         appendRegionTo(record: flightCK)
@@ -3352,9 +3352,9 @@ final class CloudKitController
         vehicleCK["TTNI"] = vehicle.timeToNextInspection.stringWithDecimal as NSString
         vehicleCK["sectionIndex"] = vehicle.sectionIndex as NSNumber
         vehicleCK["currentRecord"] = vehicle.currentRecord?.recordID as NSDate? ?? Date.distantPast as NSDate
-        vehicleCK["glidingCentre"] = vehicle.glidingCentre?.name as NSString? ?? nil
-        vehicleCK["pilot"] = vehicle.pilot?.recordID as NSDate? ?? nil
-        vehicleCK["passenger"] = vehicle.passenger?.recordID as NSDate? ?? nil
+        vehicleCK["glidingCentre"] = vehicle.glidingCentre?.name
+        vehicleCK["pilot"] = vehicle.pilot?.recordID
+        vehicleCK["passenger"] = vehicle.passenger?.recordID
         vehicleCK["recordChangeTime"] = vehicle.recordChangeTime as NSDate
         appendRegionTo(record: vehicleCK)
 
