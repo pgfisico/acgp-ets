@@ -3197,7 +3197,7 @@ final class CloudKitController
         attendanceCK["ID"] = attendanceRecord.recordID as NSDate
         attendanceCK["timeIn"] = attendanceRecord.timeIn as NSDate
         attendanceCK["timeOut"] = attendanceRecord.timeOut as NSDate
-        attendanceCK["glidingCentre"] = attendanceRecord.glidingCentre?.name as NSString? ?? nil
+        attendanceCK["glidingCentre"] = attendanceRecord.glidingCentre?.name
         attendanceCK["pilot"] = attendanceRecord.pilot?.recordID as NSDate? ?? nil
         attendanceCK["pilotFullName"] = attendanceRecord.pilot?.fullName as NSString? ?? nil
         appendRegionTo(record: attendanceCK)
