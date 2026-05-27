@@ -1321,8 +1321,6 @@ class StatsReportFromDate : Report
                 formatter.addText(pilot.email + ", ")
             }
         }
-
-        print("generate() END")
     }
     
     // MARK: - private utility functions
